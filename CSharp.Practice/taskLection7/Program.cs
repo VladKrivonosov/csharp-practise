@@ -8,7 +8,7 @@ namespace taskLection7
         {
             Task_1();
             Task_2();
-            //Task_3();
+            Task_3();
         }
 
         static void Task_1()
@@ -38,5 +38,31 @@ namespace taskLection7
                 Console.Write(myArray[i] + " ");
             }
         }
+
+        static void Task_3()
+        {
+            Random randomNumbers = new Random();
+            int[] randomArray = new int[13];
+            Console.WriteLine();
+
+            for (int i = 0; i < randomArray.Length; i++)
+            {
+                randomArray[i] = randomNumbers.Next(0, 100);
+                Console.Write(randomArray[i] + " ");
+            }
+
+            int checkNumber = 0;
+            for (int i = 0; i < randomArray.Length-1; i++)
+            {
+                if (randomArray[i] >= checkNumber)
+                {
+                    checkNumber = randomArray[i];
+                }
+            }
+
+            Console.WriteLine($"\nMax numebr from array: {checkNumber}");
+        }
+
     }
 }
+
